@@ -33,42 +33,50 @@ export default function Contact() {
                 </motion.a>
             </motion.div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="flex flex-col md:flex-row justify-between items-center gap-8 border-t border-foreground/10 pt-8 mt-auto"
-            >
-                <div className="flex flex-col items-center md:items-start gap-2">
-                    <p className="opacity-40 text-sm font-medium tracking-widest uppercase">
-                        © {new Date().getFullYear()} Haris Rashid. All rights reserved.
-                    </p>
-                    <p className="opacity-40 text-[10px] md:text-xs font-medium tracking-widest uppercase flex items-center gap-1.5">
-                        Made with <Heart className="w-3 h-3 text-red-500 fill-red-500 animate-pulse" /> by Haris
-                    </p>
-                </div>
+            <div className="flex flex-col gap-12 border-t border-foreground/10 pt-12 mt-auto overflow-hidden">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div className="flex flex-col items-center md:items-start gap-1">
+                        <p className="opacity-40 text-sm font-medium tracking-widest uppercase text-center md:text-left">
+                            © {new Date().getFullYear()} Haris Rashid. All rights reserved.
+                        </p>
+                        <p className="opacity-40 text-[10px] md:text-xs font-medium tracking-widest uppercase flex items-center gap-1.5">
+                            Made with <Heart className="w-3 h-3 text-red-500 fill-red-500 animate-pulse" /> by Haris
+                        </p>
+                    </div>
 
-                <div className="flex items-center gap-6">
-                    {[
-                        { icon: Linkedin, href: "https://www.linkedin.com/in/haris-rashid-/" },
-                        { icon: Github, href: "https://github.com/haris-rashid01" },
-                        { icon: Mail, href: "mailto:haris.rashidch@gmail.com" }
-                    ].map((item, i) => (
-                        <motion.a
-                            key={i}
-                            whileHover={{ y: -5, scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-3 rounded-full border border-foreground/10 hover:border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
-                        >
-                            <item.icon className="w-5 h-5" />
-                        </motion.a>
-                    ))}
+                    <div className="flex items-center gap-6">
+                        {[
+                            { icon: Linkedin, href: "https://www.linkedin.com/in/haris-rashid-/" },
+                            { icon: Github, href: "https://github.com/haris-rashid01" },
+                            { icon: Mail, href: "mailto:haris.rashidch@gmail.com" }
+                        ].map((item, i) => (
+                            <motion.a
+                                key={i}
+                                whileHover={{ y: -5, scale: 1.1 }}
+                                whileTap={{ scale: 0.9 }}
+                                href={item.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-4 rounded-full border border-foreground/10 hover:border-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                            >
+                                <item.icon className="w-5 h-5" />
+                            </motion.a>
+                        ))}
+                    </div>
                 </div>
-            </motion.div>
+            </div>
+
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mt-12 overflow-hidden border-t border-foreground/5 pt-6">
+                <motion.h3
+                    animate={{
+                        color: ["#ffffff", "#94a3b8", "#cbd5e1", "#ffffff"]
+                    }}
+                    transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+                    className="font-display text-[14vw] font-bold uppercase tracking-tighter leading-none text-center select-none w-full mix-blend-difference whitespace-nowrap"
+                >
+                    HARIS RASHID
+                </motion.h3>
+            </div>
         </section>
     );
 }
