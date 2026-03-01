@@ -1,28 +1,58 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
+import Education from "@/components/Education";
+
+const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
 export default function Home() {
+  const navItems = [
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Education", href: "#education" },
+    { name: "Projects", href: "#projects" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
     <main className="bg-background min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
       <nav className="fixed top-0 left-0 w-full p-6 md:px-12 flex justify-between items-center z-50 mix-blend-difference text-white">
-        <a href="#" className="font-display text-2xl font-bold uppercase tracking-widest hover:opacity-70 transition-opacity">
-          HR.
-        </a>
+        <motion.a
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: EASE }}
+          href="#"
+          className="font-display text-2xl font-bold uppercase tracking-widest hover:opacity-70 transition-opacity flex items-center gap-2"
+        >
+          <img src="/favicon.png" alt="HR Logo" className="w-10 h-10 rounded-lg invert" />
+        </motion.a>
         <div className="hidden md:flex items-center gap-8 text-sm font-medium tracking-widest uppercase">
-          <a href="#about" className="hover:opacity-70 transition-opacity">About</a>
-          <a href="#experience" className="hover:opacity-70 transition-opacity">Experience</a>
-          <a href="#projects" className="hover:opacity-70 transition-opacity">Projects</a>
-          <a href="#contact" className="hover:opacity-70 transition-opacity">Contact</a>
+          {navItems.map((item, i) => (
+            <motion.a
+              key={item.name}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: EASE, delay: 0.1 * i }}
+              whileHover={{ y: -2, opacity: 0.7 }}
+              href={item.href}
+              className="hover:opacity-70 transition-opacity"
+            >
+              {item.name}
+            </motion.a>
+          ))}
         </div>
       </nav>
 
       <Hero />
       <About />
       <Experience />
+      <Education />
       <Skills />
       <Projects />
       <Contact />

@@ -15,6 +15,9 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "Haris Rashid - Portfolio",
   description: "Associate Software Engineer passionate about impactful software solutions.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

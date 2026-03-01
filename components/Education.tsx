@@ -2,38 +2,29 @@
 
 import { motion } from "framer-motion";
 
-const experiences = [
+const education = [
     {
-        role: "Associate Software Engineer",
-        company: "Fusion Cortex",
-        period: "Oct 2024 - Present",
-        desc: "Worked on AI Automation, Agents, Chatbots, n8n, RAG, Docker, Python.",
+        degree: "Bachelor of Science in Software Engineering",
+        institution: "COMSATS University Lahore",
+        period: "2022 - 2026",
     },
     {
-        role: "MERN Stack Intern",
-        company: "KnowaTech",
-        period: "Aug 2024 - Sep 2024",
-        desc: "Worked on ReactJS, NodeJS, ExpressJS, MongoDB, FastAPI.",
+        degree: "FSc. Pre-Engineering",
+        institution: "GC University Lahore",
+        period: "2020 - 2022",
     },
     {
-        role: "AI Programmer Intern",
-        company: "AppsGenii Technologies",
-        period: "Jun 2024 - Aug 2024",
-        desc: "Python, Django, Object Detection.",
-    },
-    {
-        role: "Web Dev Intern",
-        company: "Qwerty Experts",
-        period: "Aug 2024 - Aug 2024",
-        desc: "Worked on frontend development, HTML, CSS, Javascript and Wordpress.",
+        degree: "Matriculation",
+        institution: "St. Anthony High School",
+        period: "2018 - 2020",
     }
 ];
 
 const EASE = [0.16, 1, 0.3, 1] as [number, number, number, number];
 
-export default function Experience() {
+export default function Education() {
     return (
-        <section id="experience" className="py-24 px-6 md:px-12 max-w-6xl mx-auto overflow-hidden">
+        <section id="education" className="py-24 px-6 md:px-12 max-w-6xl mx-auto overflow-hidden">
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -41,12 +32,12 @@ export default function Experience() {
                 transition={{ duration: 1, ease: EASE }}
             >
                 <h2 className="font-display text-5xl md:text-8xl font-bold uppercase tracking-tight mb-16">
-                    Experience
+                    Education
                 </h2>
             </motion.div>
 
             <div className="flex flex-col">
-                {experiences.map((exp, index) => (
+                {education.map((edu, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 30 }}
@@ -57,16 +48,15 @@ export default function Experience() {
                     >
                         <div className="md:w-1/3 mb-4 md:mb-0">
                             <span className="text-sm font-semibold tracking-widest uppercase opacity-40 group-hover:opacity-100 transition-opacity">
-                                {exp.period}
+                                {edu.period}
                             </span>
                             <h3 className="text-2xl md:text-4xl font-display font-medium mt-2 group-hover:translate-x-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                                {exp.company}
+                                {edu.institution}
                             </h3>
                         </div>
 
                         <div className="md:w-1/2 flex flex-col justify-center">
-                            <h4 className="text-xl md:text-2xl font-medium mb-2 group-hover:text-foreground/80 transition-colors">{exp.role}</h4>
-                            <p className="text-lg opacity-60 leading-relaxed group-hover:opacity-100 transition-opacity duration-500">{exp.desc}</p>
+                            <h4 className="text-xl md:text-2xl font-medium mb-2 group-hover:text-foreground/80 transition-colors">{edu.degree}</h4>
                         </div>
                     </motion.div>
                 ))}

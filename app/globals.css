@@ -26,11 +26,13 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
-  /* Smooth scrolling for anchor links */
-  scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for cleaner look */
