@@ -11,10 +11,10 @@ export default function Skills() {
     return (
         <section id="skills" className="py-24 overflow-hidden border-t border-b border-foreground/5 bg-background text-foreground">
             <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, y: 100, rotateX: 30, perspective: 1000 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: false, margin: "-100px" }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
                 className="flex w-fit gap-4 animate-marquee whitespace-nowrap"
             >
                 {/* Double the array for seamless scrolling */}
