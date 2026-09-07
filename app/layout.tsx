@@ -12,7 +12,7 @@ const oswald = Oswald({
   subsets: ["latin"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://harisrashid.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://haris-liard.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
